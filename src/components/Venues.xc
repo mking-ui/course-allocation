@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 export default function Venues() {
@@ -38,7 +39,12 @@ export default function Venues() {
               </div>
             </div>
           </div>
-
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/mking-ui/course-allocation.git
+git push -u origin main
           <div className="col-lg-3 col-md-4 col-10  ">
             <div className="card border-0 shadow-sm ">
               <Link href="/lecturers/flawer.jpg" data-lightbox="venueImage" data-title=" This is SLT1 venue" className="glightbox g-size">
