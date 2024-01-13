@@ -1,5 +1,5 @@
 
-import getAllCourses from "@/course-fetch/getAllCourse";
+import getAllCourses from "@/course-fetch/level1/getAllCourse";
 import Link from "next/link";
 
 const TableView = async () => {

@@ -1,5 +1,5 @@
 
-import semester from "@/models/100level/semester";
+import semester from "@/models/semester";
 import { NextResponse } from "next/server";
 
 export async function GET (req, {params:{id}}){
@@ -13,14 +13,49 @@ export async function GET (req, {params:{id}}){
     }
 }
 
-export async function PUT ({params:{id}, req}){
-try {
-   
-    const body = await req.json();
-    const updatelevel1 = await semester.findByIdAndUpdate(id,body);
-    return NextResponse.json({msg:"updated", updatelevel1});
-} catch (error) {
-    return NextResponse.json("unable to update");
-    
-}
+export async function PUT(request, { params: { id } }) {
+  try {
+    //Get the data from the request
+    const {
+      newCode: code,
+      newTitle: title,
+      newDescription: description,
+      newName: name,
+      newPosition : position,
+      newSpecializes: specializes,
+      newEmail: email,
+      newPhone: phone,
+      newImage: image,
+    } = await request.json();
+    const newUser = {
+      code,
+      title,
+      description,
+      name,
+      position,
+      specializes,
+      email,
+      phone,
+      image,
+    };
+    //Use the Model to update
+    await semester.findByIdAndUpdate(id, newUser);
+    return NextResponse.json(
+      {
+        message: "User Updated successfully",
+        data: newUser,
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      {
+        message: "Failed to Create a User",
+        error,
+      },
+      {
+        status: 500,
+      }
+    );
+  }
 }

@@ -7,9 +7,13 @@ export default function AddData200() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [name, setName] = useState("");
-  const [department, setDepartment] = useState("");
+  const [position, setPosition] = useState("");
+  const [specializes, setSpecializes] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [photo, setPhoto] = useState("");
+  const [error, setError] = useState("")
+  
   const router = useRouter();
 
   const CLOUD_NAME = "djkeyh3y0";
@@ -22,15 +26,33 @@ export default function AddData200() {
       !title ||
       !description ||
       !name ||
-      !department ||
-      !email ||
-      !photo
+      !position ||
+      !specializes ||
+      !phone ||
+      !email
     ) {
       alert("all fields are required");
       return;
     }
+    try {
+      const resUserExists = await fetch("api/exist2", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ code }),
+      });
+  
+      const { user } = await resUserExists.json();
+  
+      if (user) {
+        setError("course already exists.");
+        return;
+      }
+      
+   
     const image = await uploadImage();
-    const response = await fetch("api/level1", {
+    const response = await fetch("api/level2", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +62,9 @@ export default function AddData200() {
         title,
         description,
         name,
-        department,
+        position,
+        specializes,
+        phone,
         email,
         photo,
         image,
@@ -48,18 +72,25 @@ export default function AddData200() {
     });
     if (response.status == 200) {
       router.refresh();
+      setError("");
       setCode("");
       setTitle("");
       setDescription("");
       setName("");
-      setDepartment("");
+      setPosition("");
+      setSpecializes("");
+      setPhone("")
       setEmail("");
       setPhoto("");
     }
+  } catch (error) {
+      
+    console.log("Error during registration: ", error);
+  }
   };
   const uploadImage = async () => {
     if (!photo) return;
-
+e.preventDefault();
     const formData = new FormData();
 
     formData.append("file", photo);
@@ -85,16 +116,13 @@ export default function AddData200() {
   };
 
   return (
-    <div className="container c-container shadow  text-light p-3">
+    <div className="container text-light p-3">
       <div className="row  justify-content-center align-items-center">
-        <div className="col-lg-4 col-12 text-center">
-          <h3 className="animate__animated animate__heartBeat animate__infinite ">
-            Welcome Back
-          </h3>
-          <p>Add your 100 level courses here!</p>
-        </div>
-        <div className="col-lg-8 con col-12">
-          <form className="row g-2" onSubmit={handleSubmit}>
+       
+        <div className="col-md-8 shadow border border-2 col-12 rounded-2 py-2 mb-3">
+          <form className="row g-2 " onSubmit={handleSubmit}>
+          {error && <p className=" text-center text-danger">{error}</p>}
+                  <hr className="mb-1" />
             <div className="col-md-6 ">
               <label htmlFor="code" className="form-label">
                 Course Code
@@ -134,9 +162,9 @@ export default function AddData200() {
               ></textarea>
             </div>
 
-            <div className="col-md-6">
+            <div className="col-md-4">
               <label htmlFor="name" className="form-label">
-                Lecturer Name
+                Instructor Name
               </label>
               <input
                 type="text"
@@ -146,19 +174,31 @@ export default function AddData200() {
                 value={name}
               />
             </div>
-            <div className="col-md-6">
-              <label htmlFor="department" className="form-label">
-                Department
+            <div className="col-md-4">
+              <label htmlFor="position" className="form-label">
+               Position
               </label>
               <input
                 type="text"
                 className="form-control  shadow-sm"
-                id="department"
-                onChange={(e) => setDepartment(e.target.value)}
-                value={department}
+                id="position"
+                onChange={(e) => setPosition(e.target.value)}
+                value={position}
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
+              <label htmlFor="specializes" className="form-label">
+              Specializes
+              </label>
+              <input
+                type="text"
+                className="form-control  shadow-sm"
+                id="specializes"
+                onChange={(e) => setSpecializes(e.target.value)}
+                value={specializes}
+              />
+            </div>
+            <div className="col-md-4">
               <label htmlFor="Email" className="form-label">
                 Email Address:
               </label>
@@ -170,7 +210,20 @@ export default function AddData200() {
                 value={email}
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
+              <label htmlFor="phone" className="form-label">
+               Phone No:
+              </label>
+              <input
+                type="phone"
+                className="form-control  shadow-sm"
+                id="phone"
+                onChange={(e) => setPhone(e.target.value)}
+                value={phone}
+              />
+            </div>
+            
+            <div className="col-md-4">
               <label htmlFor="image" className="form-label">
                 Upload Image
               </label>
@@ -182,7 +235,7 @@ export default function AddData200() {
               />
             </div>
 
-            <button type="submit" className="btn btn-add text-light my-2">
+            <button type="submit" className="btn btn-add text-light my-3 ">
               Add
             </button>
           </form>

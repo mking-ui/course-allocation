@@ -1,5 +1,5 @@
 
-import getAllCourses from "@/course-fetch/getAllCourse";
+import getAllCourses from "@/course-fetch/level1/getAllCourse";
 import Link from "next/link";
 
 export default async function FirstSemester100() {
@@ -12,7 +12,7 @@ export default async function FirstSemester100() {
             <div className="row g-4">
               <div className="col-lg-2">
                 <Link
-                  href={`/details/${first._id}`}
+                  href={`/details1/${first._id}`}
                   className="code p-2 mb-0"
                   data-aos="fade-down"
                   data-aos-delay="200"
@@ -29,7 +29,7 @@ export default async function FirstSemester100() {
                 <p className="text-cate pl1 pt-3 text-justify">{first.description}</p>
                
                   <Link
-                    href={`/details/${first._id}`}
+                    href={`/details1/${first._id}`}
                     className="btn btn-readmore shadow "
                   >
                     <i className="bi bi-chevron-right">Read More</i>

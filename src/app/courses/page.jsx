@@ -12,16 +12,10 @@ export default function page() {
           <Link className="btn border-0  back  shadow btn-sm mx-1" href="/">
             <i className="bi bi-arrow-left mx-1"> </i>
           </Link>
-          <button type="button" class="btn btl btn-lg position-relative mt-2">
-            Courses Description
-            <span class="position-absolute top-0 start-100 translate-middle p-2 btl border border-3 border-light rounded-circle">
-              <span class="visually-hidden"></span>
-            </span>
-          </button>
-        </div>
-
-        <div className="shadow-none mb-1 py-2">
-          <Link href={'/searchCrs'}>
+          <button type="button" class="btn btl btn-lg w-100 position-relative mt-2">
+            Courses Description <br />
+            <div className="shadow-none mb-1 py-2">
+          <Link href={'/searchCrs1'}>
           <input
             type="text"
             className="shadow border-0 p-2 rounded-2  position-relative col-12 col-md-4"
@@ -29,6 +23,10 @@ export default function page() {
           />
           </Link>
         </div>
+          </button>
+        </div>
+
+       
 
         <ul
           className="nav nav-pills mt-2 justify-content-start justify-content-lg-end align-items-start animate__animated animate__fadeInDown "
@@ -62,7 +60,7 @@ export default function page() {
           </div>
 
           <div className="container tab-pane fade" id="200">
-         <FirstSemester100 />
+         <FirstSemester200 />
           </div>
 
           <div className="container tab-pane fade" id="300">

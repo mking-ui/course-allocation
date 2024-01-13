@@ -1,6 +1,6 @@
 
 import AdminNav from "@/components/AdminNav";
-import AdminDashboard from "@/components/admin/AdminDashboard";
+import AdminDashboard from "@/components/admin/(view)/AdminDashboard";
 export default function AdminDashboardPage() {
   return (
     <>

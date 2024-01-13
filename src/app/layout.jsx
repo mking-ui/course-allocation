@@ -27,10 +27,10 @@ export default function RootLayout({ children }) {
     (
       <html lang="en">
         <body>
-        <AuthProvider>
+       
          {children}
-         </AuthProvider>
-         <Footer/>
+         
+         
         </body>
       </html>
     )

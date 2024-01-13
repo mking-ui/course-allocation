@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 export default function NavLanding() {
   return (
-    <nav className="navbar navbar-expand-lg fixed-top landingNav ">
+    <nav className="navbar navbar-expand-md fixed-top landingNav ">
       <div className="container ">
         <Link
           className="navbar-brand d-flex align-items-center animate__animated animate__fadeInDown"
@@ -20,7 +20,7 @@ export default function NavLanding() {
           <span className="bi bi-list h3"></span>
         </button>
         <div
-          className=" sidebar offcanvas offcanvas-start  offset-1 mt-3 mb-3 "
+          className=" sidebar offcanvas offcanvas-start  mt-3 mb-3 "
           tabindex="-1"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
@@ -41,38 +41,9 @@ export default function NavLanding() {
             ></button>
             <hr />
           </div>
-          <div className="offcanvas-body d-flex flex-column flex-lg-row p-3">
-            <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
-              <li className="nav-item mx-2  d-lg-none py-md-3">
-                <a href="/" className="nav-link">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item mx-2 d-lg-none">
-                <a href="/courses" className="nav-link bi bi-chevron-right h2">
-                  Courses
-                </a>
-              </li>
-              <li className="nav-item mx-2 d-lg-none ">
-                <a
-                  href="/instructor"
-                  className="nav-link bi bi-chevron-right h2"
-                >
-                  Instructor
-                </a>
-              </li>
-              <li className="nav-item mx-2  d-lg-none py-md-3">
-                <a href="/about" className="nav-link">
-                  About
-                </a>
-              </li>
-              <li className="nav-item mx-2 d-lg-none">
-                <a href="/project" className="nav-link">
-                  Project
-                </a>
-              </li>
-            </ul>
-            <div className="d-flex flex-column flex-md-row  animate__animated animate__fadeInDown align-items-center justify-content-center ">
+          <div className="offcanvas-body d-flex flex-column flex-lg-row p-3 justify-content-md-end">
+           
+            <div className="d-flex flex-column flex-md-row  animate__animated animate__fadeInDown align-items-center justify-content-end ">
               <Link href="/login" className=" btn btn-login me-2 text-dark me-3 ">
                 Login
               </Link>

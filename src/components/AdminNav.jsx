@@ -29,6 +29,11 @@ export default function NavB() {
             
             <div className="offcanvas-body d-flex flex-column flex-lg-row p-4">
               <ul className="navbar-nav justify-content-md-end justify-content-center flex-grow-1 pe-3">
+              <li className="nav-item mx-2  py-md-3">
+                  <a href="/" className="nav-link">
+                  Home
+                  </a>
+                </li>
                 <li className="nav-item mx-2  py-md-3">
                   <a href="/dashboard" className="nav-link">
                    Name

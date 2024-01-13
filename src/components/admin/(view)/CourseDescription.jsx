@@ -1,27 +1,26 @@
-import RemoveButton from "@/components/Remove";
-import getAllCourses from "@/course-fetch/getAllCourse";
+import RemoveButton from "@/components/courses/(100)/Delete1";
+import getAllCourses from "@/course-fetch/level1/getAllCourse";
 import Link from "next/link";
 export default async function CourseDescription() {
   const level1s = await getAllCourses();
   return (
     <>
       <div className="container " id="courses">
-        
-          <Link
-            className="btn border-0  back  shadow btn-sm mx-1"
-            href="/dashboard"
-          >
-            <i className="bi bi-arrow-left mx-1"> </i>
-          </Link>
-          <div className="shadow-none mb-1 py-3 text-center ">
-            <Link href={'/adminSrch'}>
+        <Link
+          className="btn border-0  back  shadow btn-sm mx-1"
+          href="/dashboard"
+        >
+          <i className="bi bi-arrow-left mx-1"> </i>
+        </Link>
+        <div className="shadow-none mb-1 py-3 text-center ">
+          <Link href={"/adminSrch1"}>
             <input
               type="text"
               className="shadow border-0 p-2 rounded-2 col-lg-5 col-12 position-relative "
               placeholder="Search for your course"
             />
-            </Link>
-          </div>
+          </Link>
+        </div>
       </div>
       <div className="container " id="courses">
         {level1s.map((first) => {
@@ -42,7 +41,7 @@ export default async function CourseDescription() {
                 className="col-lg-7 pt-1 con order-2 order-lg-1 pt-2 title-description"
                 data-aos="fade-up"
               >
-                <h2>{first.title}</h2> <hr  className="text-light mb-1"/>
+                <h2>{first.title}</h2> <hr className="text-light mb-1" />
                 <p className="text-cate pl1 pt-3">{first.description}</p>
                 <div className="d-flex flex-row gap-2 ">
                   <Link
@@ -53,7 +52,7 @@ export default async function CourseDescription() {
                   </Link>
 
                   <Link
-                    href={""}
+                    href={`/edit1/${first._id}`}
                     className="btn btn-readmore border border-2 border-secondary "
                   >
                     <i className="bi bi-pencil me-1 text-success"></i>Edit

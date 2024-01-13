@@ -15,12 +15,13 @@ export default function page() {
           </Link>
           <button
             type="button"
-            className="btn btl btn-lg position-relative mt-2"
+            className="btn btl btn-lg w-100 position-relative mt-2"
           >
-            Add Courses
-            <span className="position-absolute top-0 start-100 translate-middle p-2 btl border border-3 border-light rounded-circle">
-              <span className="visually-hidden"></span>
-            </span>
+          <h3 className="animate__animated animate__heartBeat  ">
+            Welcome Back
+          </h3>
+           Add course
+          
           </button>
         </div>
 

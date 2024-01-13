@@ -1,11 +1,12 @@
 
-import semester from "@/models/100level/semester";
+import semester from "@/models/semester";
 import { NextResponse } from "next/server";
 
 //post
 export async function POST(req) {
     try {
-       
+        
+    
         const body = await req.json();
         const newlevel1 = await semester.create(body)
         return NextResponse.json({ msg: ["successfully created"], newlevel1 }, { status: 200 });

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+
 export default function AddData() {
   const [code, setCode] = useState("");
   const [title, setTitle] = useState("");
@@ -12,6 +13,8 @@ export default function AddData() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [photo, setPhoto] = useState("");
+  const [error, setError] = useState("")
+  
   const router = useRouter();
 
   const CLOUD_NAME = "djkeyh3y0";
@@ -32,6 +35,23 @@ export default function AddData() {
       alert("all fields are required");
       return;
     }
+    try {
+      const resUserExists = await fetch("api/exist1", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ code }),
+      });
+  
+      const { user } = await resUserExists.json();
+  
+      if (user) {
+        setError("course already exists.");
+        return;
+      }
+      
+   
     const image = await uploadImage();
     const response = await fetch("api/level1", {
       method: "POST",
@@ -53,6 +73,7 @@ export default function AddData() {
     });
     if (response.status == 200) {
       router.refresh();
+      setError("");
       setCode("");
       setTitle("");
       setDescription("");
@@ -63,10 +84,14 @@ export default function AddData() {
       setEmail("");
       setPhoto("");
     }
+  } catch (error) {
+      
+    console.log("Error during registration: ", error);
+  }
   };
   const uploadImage = async () => {
     if (!photo) return;
-
+e.preventDefault();
     const formData = new FormData();
 
     formData.append("file", photo);
@@ -92,17 +117,13 @@ export default function AddData() {
   };
 
   return (
-    <div className="container  c-container shadow  text-light p-3">
+    <div className="container text-light p-3">
       <div className="row  justify-content-center align-items-center">
-        <div className="col-lg-4 col-12 text-center">
-          <h3 className="animate__animated animate__heartBeat animate__infinite ">
-            Welcome Back
-          </h3>
-          <p>Allocate course to the instruction <br /> as well as with their
-                contact !</p>
-        </div>
-        <div className="col-md-8 con col-12 rounded-2 py-2 mb-3">
-          <form className="row g-2 " onSubmit={handleSubmit}>
+       
+        <div className="col-md-8 shadow border border-2 col-12 rounded-2 py-2 mb-3">
+          <form className="row g-2  " onSubmit={handleSubmit}>
+          {error && <p className=" text-center text-danger">{error}</p>}
+                  <hr className="mb-1" />
             <div className="col-md-6 ">
               <label htmlFor="code" className="form-label">
                 Course Code
@@ -215,7 +236,7 @@ export default function AddData() {
               />
             </div>
 
-            <button type="submit" className="btn btn-add text-light my-2 mb-5">
+            <button type="submit" className="btn btn-add text-light my-3 ">
               Add
             </button>
           </form>

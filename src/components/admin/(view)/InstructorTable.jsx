@@ -1,13 +1,77 @@
+"use client";
 
-import getAllCourses from "@/course-fetch/getAllCourse";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import DataTable from "react-data-table-component";
 
-const InstructorTable = async () => {
-  
-  const instruct = await getAllCourses();
+const InstructorTable = () => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  const columns = [
+    {
+      name: "COURSE CODE",
+      selector: (row) => row.code,
+      sortable: true,
+      id: "header",
+    },
+    {
+      name: "COURSE TITLE",
+      selector: (row) => row.title,
+      sortable: false,
+      id: "header",
+    },
+    {
+      name: "NAME",
+      selector: (row) => row.name,
+      sortable: false,
+      id: "header",
+    },
+    {
+      name: "POSITION",
+      selector: (row) => row.position,
+      sortable: true,
+      id: "header",
+    },
+    {
+      name: "SPECIALISED/FIELD",
+      selector: (row) => row.specializes,
+      sortable: true,
+      id: "header",
+    },
+    {
+      name: "PHONE",
+      selector: (row) => row.phone,
+      sortable: true,
+      id: "header",
+    },
+  ];
+  const [records, setRecords] = useState([]);
+
+  const [record, setRecord] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/level1")
+      .then((Response) => Response.json())
+      .then((Response) => {
+        setRecords(Response);
+        setRecord(Response);
+      });
+  }, []);
+
+  const handleFilter = (event) => {
+    const newData = records.filter((row) => {
+      return (
+        row.code.toLowerCase().includes(event.target.value.toLowerCase()) ||
+        row.name.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+    });
+    setRecord(newData);
+  };
 
   return (
-    <div className=" container" id="table">
+    <div className=" container " id="instructorView">
       <div className="row primary-color d-flex flex-row">
         <div className="col-12">
           <p className="display-6 mb-0 text-justify">
@@ -17,62 +81,41 @@ const InstructorTable = async () => {
             >
               <i className="bi bi-arrow-left mx-1"> </i>
             </Link>
-            <button type="button" class="btn btl btn-lg position-relative mt-2">
-              Instructor
-              <span class="position-absolute top-0 start-100 translate-middle p-2 btl border border-3 border-light rounded-circle">
-                <span class="visually-hidden"></span>
-              </span>
+            <button
+              type="button"
+              class="btn w-100 btl btn-lg position-relative my-2"
+            >
+             
+             Tabular view.
+     
+             
+              <br />
+              <input
+                type="text"
+                onChange={handleFilter}
+                className="shadow border-0 p-2 mb-1 rounded-2 col-12 col-md-8"
+                placeholder="Search using code or name"
+           
+              />
             </button>
           </p>
-          <blockquote className="display-6 mt-3 mt-md-2 text-justify">
-           Overview of instructor course allocation page.
-          </blockquote>
         </div>
       </div>
-      <div className="shadow-none mb-1 py-1">
-        <Link href="">
-          <input
-            type="text"
-            className="shadow border-0 p-2 rounded-2  col-12 col-lg-6"
-            placeholder="search"
-            readOnly
-          />
-        </Link>
-      </div>
-      <h3>Your Courses</h3>
 
-      <div className="container con rounded-2 py-3">
-        <form onSubmit="handleUpdate">
-          <div className="tableheader overflow-x-auto ">
-            <table class="table rounded-2 border-dark-subtle table-bordered table-striped  table-hover table-responsive">
-              <thead className=" text-center ">
-                <tr>
-                  <th scope="col">Course_code</th>
-                  <th className=" w-25 px-5">Course_title</th>
-                  <th scope="col">Instructor_Name</th>
-                  <th scope="col">Position</th>
-                  <th scope="col">Specializes</th>
-                  <th scope="col">Phone</th>
-                </tr>
-              </thead>
-              <tbody className="text-center ">
-                {instruct.map((e) => (
-                  <tr key={e.id}>
-                    <td>{e.code}</td>
-                    <td>{e.title}</td>
-                    <td>{e.name}</td>
-                    <td>{e.position}</td>
-                    <td>{e.specializes}</td>
-                    <td>{e.phone}</td>
-                    
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </form>
+      <h3>Your Courses</h3>
+      <div className="card rounded-0 con">
+        {isClient && (
+          <DataTable
+            columns={columns}
+            data={record}
+            selectableRows
+            fixedHeader
+            pagination
+          ></DataTable>
+        )}
       </div>
     </div>
   );
 };
+
 export default InstructorTable;

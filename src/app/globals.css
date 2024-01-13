@@ -2,7 +2,11 @@
 @import "bootstrap-icons";
 @import "animate.css";
 @import "lightbox2/dist/css/lightbox.min.css";
-
+:root{
+  --bg-color:#1e1e39;
+  --text-color:#f2f2f2;
+  --btn-color:#2a2a86;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -10,15 +14,16 @@ html {
 body {
  
   font-family: "Poppins", sans-serif;
-  background: rgb(8, 8, 38);
-  background: linear-gradient(rgb(0, 0, 0, 0.3),
+  background: var(--bg-color);
+  /*background: linear-gradient(rgb(0, 0, 0, 0.3),
       rgb(0, 0, 0, 0.8)),
-    url("/imgs/sch.jpg");
+    url("/imgs/sch.jpg");*/;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  
 
 }
 
@@ -61,7 +66,6 @@ p {
   align-items: center;
   overflow: hidden;
   border-radius: 3px;
-
 }
 
 @media(max-width:768px) {
@@ -71,8 +75,8 @@ p {
 }
 
 .btn-signup:hover {
-  color: #f2f2f27a;
   background-color: #2a2a868e;
+  color: var(--text-color);
   opacity: 0.6;
 }
 
@@ -96,7 +100,16 @@ p {
   transition: ease-in-out 0.3s;
   opacity: 0.6;
 }
-
+.navbar .navbar-brand{
+  color: #f2f2f2;
+  text-transform: uppercase;
+}
+.navbar .navbar-brand:hover {
+  color: #f2f2f27a;
+  transition: ease-in-out 0.3s;
+  opacity: 0.6;
+ 
+}
 .navbar {
   margin: 0;
   padding: 15px;
@@ -107,7 +120,8 @@ p {
 
 @media (max-width:768px) {
   .landingNav {
-    background-color: #252537 !important;
+    background-color: var(--bg-color) !important;
+    color: #f2f2f2;
   }
 }
 
@@ -118,15 +132,9 @@ p {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.navbar-brand {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  text-transform: uppercase;
-  padding: 10px;
-  color: #f2f2f2;
-  
-}
+
+
+
 
 
 .navbar .bi-list {
@@ -135,9 +143,9 @@ p {
 }
 
 .parallax-header {
-  background: rgb(8, 8, 38);
-  background: linear-gradient(rgb(0, 0, 0, 0.3),
-      rgb(8, 8, 38, 0.8)),
+  background: var(--bg-color);
+  background: linear-gradient(rgba(74, 73, 73, 0.3),
+      rgba(102, 102, 145, 0.8)),
     url("/imgs/sch.jpg");
 
   background-position: center;
@@ -146,19 +154,20 @@ p {
   background-attachment: fixed;
   background-blend-mode: multiply;
   object-fit: cover;
+  backdrop-filter: blur(15px);
 }
 
 .header-content {
-  padding: 90px 0 400px 0;
+  padding: 80px 0 400px 0;
 }
 
 .content {
-  margin-top: -130px;
+  margin-top: -140px;
 }
 
 @media (max-width: 767px) {
   .header-content {
-    padding: 100px 0 200px 0;
+    padding: 90px 0 250px 0;
   }
 
   #courses .lec-img {
@@ -167,8 +176,9 @@ p {
     object-fit: cover;
   }
 
+
   .content {
-    margin-top: -120px;
+    margin-top: -140px;
   }
 }
 
@@ -203,16 +213,16 @@ p {
 
 @media(max-width:768px) {
   .left h1 {
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 1.6em;
-    text-shadow: #252537;
-    color: #080826;
-    letter-spacing: 2px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    align-items: center;
+    justify-content: center;
+    
   }
 
   .left h4 {
-    font-size: 15px;
+    font-size: 1.1em;
     line-height: 1.4em;
   }
 }
@@ -223,7 +233,7 @@ p {
   opacity: 0.3;
 }
 
-.navbar .sign {
+.navbar.sign {
   animation-delay: 1s;
 }
 
@@ -304,7 +314,7 @@ p {
 
 /*Adding*/
 #add {
-  margin-top: 35px;
+  margin-top: 5px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -342,7 +352,7 @@ p {
   color: #f2f2f2;
   border-radius: 4px;
   background-color: #26247b;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 1px;
 
 }
@@ -369,6 +379,7 @@ p {
     object-fit: cover;
     border-radius: 10px;
   }
+ 
 }
 
 @media (max-width: 767px) {
@@ -376,6 +387,9 @@ p {
     width: 100%;
     height: 40vw;
     object-fit: cover;
+  }
+  #courses .title-description h2{
+    font-size: 22px;
   }
 }
 
@@ -422,22 +436,27 @@ p {
 }
 
 /* back button */
-.back {
-  background-color: #2a2a86;
+.back{
+  background-color: var(--btn-color);
   color: #f2f2f2;
   cursor: pointer;
 }
-
-.back:hover {
-  background-color: #2a2a86;
+.back .bi-arrow-left{
+  cursor: pointer;
+}
+.back:hover{
+  background-color: var(--btn-color);
   color: #f2f2f2;
   opacity: .6;
+  cursor: pointer;
 }
 
 .btl {
   background-color: #2a2a86;
   color: #f2f2f2;
   letter-spacing: 0;
+  border-radius: 0px;
+  cursor: pointer;
 
 }
 
@@ -477,17 +496,6 @@ p {
 }
 
 
-
-/*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
-@media (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-
-}
-
 .c-container {
   margin-top: 0px;
 }
@@ -516,14 +524,14 @@ p {
 }
 
 
-#project .vid-img {
+#project .vid-img{
   width: 100%;
   height: 50vh;
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
-  #project .vid-img {
+@media(max-width:768px){
+  #project .vid-img{
     width: 100%;
     height: 40vh;
     object-fit: cover;
@@ -556,26 +564,28 @@ p {
 /* Table */
 
 [data-column-id="header"].rdt_TableCol {
-  background: #252537;
+  background:var(--bg-color);
   font-family: "Open Sans", sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-weight: 400;
-  color: #f2f2f2;
+  color: var(--text-color);
   padding: 10px 5 8px 5;
   margin-top: 10px;
+  max-width: 400px;
 
+}
+
+#instructorView{
+  margin-top: 30px;
 }
 
 #instructor{
   margin-top: 80px;
 }
-#instructor blockquote {
-  color: #f2f2f2;
-  letter-spacing: 2px;
-}
+
 
 #instructor {
-  border-top-right-radius: 10px;
+  border-top-right-radius: px;
 }
 
 #table blockquote {

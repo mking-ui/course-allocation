@@ -1,22 +1,23 @@
-import getAllCourses from "@/course-fetch/getAllCourse";
+
+import getAllCourses from "@/course-fetch/level2/getAllCourse";
 import Link from "next/link";
 
 export default async function FirstSemester200() {
- const level1s = await getAllCourses();
+ const level2s = await getAllCourses();
   return (
     <>
       <div className="container" id="courses">
-        {level1s.map((first) => {
+        {level2s.map((second) => {
           return (
-            <div className="row g-4">
+            <div className="row g-4" key={second._id}>
               <div className="col-lg-2">
                 <Link
-                  href={`/details/${first._id}`}
+                  href={`/details2/${second._id}`}
                   className="code p-2 mb-0"
                   data-aos="fade-down"
                   data-aos-delay="200"
                 >
-                  {first.code}
+                  {second.code}
                 </Link>
               </div>
 
@@ -24,10 +25,10 @@ export default async function FirstSemester200() {
                 className="col-lg-7 pt-1  order-2 order-lg-1 shadow"
                 data-aos="fade-up"
               >
-                <h2>{first.title}</h2>
-                <p className="text-cate pl1 ">{first.description}</p>
+                <h2>{second.title}</h2>
+                <p className="text-cate pl1 ">{second.description}</p>
                 <Link
-                  href={`/details/${first._id}`}
+                  href={`/details2/${second._id}`}
                   className="btn btn-readmore shadow "
                 >
                   <i className="bi bi-chevron-right">Read More</i>
@@ -44,19 +45,19 @@ export default async function FirstSemester200() {
                     Instructor
                   </span>
                 </h1-6>
-                <img src={first.image} className="lec-img " />
+                <img src={second.image} className="lec-img " />
 
                 <div className="">
                   <p className="pl m-0">
-                    <span className="fw-bold">Name:</span> {first.name}
+                    <span className="fw-bold">Name:</span> {second.name}
                   </p>
                   <p className="pl m-0">
-                    <span className="fw-bold">Department:</span>
-                    {first.department}
+                    <span className="fw-bold">Position:</span>
+                    {second.position}
                   </p>
                   <p className="pl m-0">
                     <span className="fw-bold">Email:</span>
-                    {first.email}
+                    {second.email}
                   </p>
                 </div>
               </div>
