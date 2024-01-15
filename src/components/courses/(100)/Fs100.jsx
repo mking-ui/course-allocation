@@ -22,10 +22,10 @@ export default async function FirstSemester100() {
               </div>
               
               <div
-                className="col-lg-7 pt-1  pt-2 title-description"
+                className="col-lg-7 pt-1 shadow pt-2 "
                 data-aos="fade-up"
               >
-                <h2>{first.title}</h2> <hr  className="text-light mb-1"/>
+                <h2>{first.title}</h2> <hr  className=" mb-1"/>
                 <p className="text-cate pl1 pt-3 text-justify">{first.description}</p>
                
                   <Link

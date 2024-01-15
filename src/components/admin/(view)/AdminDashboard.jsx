@@ -15,7 +15,7 @@ export default function AdminDashboard() {
                   data-aos="fade-in"
                   data-aos-delay="100"
                 >
-                  <h2>Welcome Admin</h2>
+                  <h2 className="text-light">Welcome Admin</h2>
                   <p className="lead">
                     This is where you can add, update and delete instructor or
                     course description.

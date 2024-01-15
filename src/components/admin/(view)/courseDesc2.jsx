@@ -3,7 +3,7 @@ import RemoveButton2 from "@/components/courses/(200)/Delete2";
 import getAllCourses from "@/course-fetch/level2/getAllCourse";
 import Link from "next/link";
 export default async function CourseDescription() {
-  const level2s = await getAllCourses();
+  //const level2s = await getAllCourses();
   return (
     <>
       <div className="container " id="courses">
@@ -29,7 +29,7 @@ export default async function CourseDescription() {
             <div className="row g-4" key={second.id}>
               <div className="col-lg-2">
                 <Link
-                  href={`/details/${second._id}`}
+                  href={`/details2/${second._id}`}
                   className="code p-2 mb-0"
                   data-aos="fade-down"
                   data-aos-delay="200"

@@ -16,7 +16,7 @@ export default async function ViewCourses({ params: { id } }) {
         </div>
       </div>
 
-      <div className="container con shadow mt-5 p-4 justify-content-center align-items-center rounded-2"  id="project">
+      <div className="container shadow mt-5 p-4 justify-content-center align-items-center rounded-2"  id="project">
         <section>
           <h2 className="my-3">{first.code}</h2>
           <h1 className="my-3">{first.title}</h1>

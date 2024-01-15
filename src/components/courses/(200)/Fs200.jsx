@@ -26,7 +26,7 @@ export default async function FirstSemester200() {
                 data-aos="fade-up"
               >
                 <h2>{second.title}</h2>
-                <p className="text-cate pl1 ">{second.description}</p>
+                <p className="text-cate pl1 pt-3 text-justify ">{second.description}</p>
                 <Link
                   href={`/details2/${second._id}`}
                   className="btn btn-readmore shadow "

@@ -87,7 +87,7 @@ const Instructor = () => {
                 <input
                   type="text"
                   onChange={handleFilter}
-                  className="shadow border-0 p-2 rounded-2 col-12 col-md-4 text-light"
+                  className="shadow  p-2 rounded-2 border border-secondary col-12 col-md-4 text-light"
                   placeholder="Search using name or code"
                 />
               </div>

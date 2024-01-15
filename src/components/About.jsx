@@ -34,7 +34,7 @@ export default function About() {
             earum aliquid doloremque accusamus? Dolore fuga ullam sapiente, hic
             impedit quas earum aliquam dignissimos modi harum itaque!
           </p>
-          <div className="h2 my-3 text-light">Brief History</div>
+          <div className="h2 my-3 ">Brief History</div>
           <p className="text-justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
             similique cupiditate id excepturi ex voluptatibus delectus aliquam

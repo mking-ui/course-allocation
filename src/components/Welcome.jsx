@@ -16,7 +16,7 @@ export default function Welcome() {
                 alt=""
                 width="200"
                 height="150"
-                className=" d-md-none d-block mx-auto mt-5 "
+                className=" d-block mx-auto"
               />
             </Link>
           </div>
@@ -35,7 +35,7 @@ export default function Welcome() {
             </h1>
             <h4 className="text-center fst-italic">
               A portal for managing allocation of courses to
-              <span className="instructor">Instructor</span> and with focus on
+              <span className="instructor"> Instructor</span> and with focus on
               courses description for
               <span className="student"> student.</span>
             </h4>
@@ -47,7 +47,7 @@ export default function Welcome() {
                 href="/about"
                 className=" learn text-center animate__animated animate__fadeInUp text-dark "
               >
-                Learn More
+                Login
               </Link>
             </div>
           </div>

@@ -120,7 +120,7 @@ e.preventDefault();
     <div className="container text-light p-3">
       <div className="row  justify-content-center align-items-center">
        
-        <div className="col-md-8 shadow border border-2 col-12 rounded-2 py-2 mb-3">
+        <div className="col-md-8 shadow con col-12 rounded-2 py-2 mb-3">
           <form className="row g-2  " onSubmit={handleSubmit}>
           {error && <p className=" text-center text-danger">{error}</p>}
                   <hr className="mb-1" />
@@ -150,18 +150,7 @@ e.preventDefault();
               />
             </div>
 
-            <div className="mb-1">
-              <label htmlFor="description" className="form-label">
-                Description
-              </label>
-              <textarea
-                className="form-control  shadow-sm"
-                id="description"
-                rows="3"
-                onChange={(e) => setDescription(e.target.value)}
-                value={description}
-              ></textarea>
-            </div>
+           
 
             <div className="col-md-4">
               <label htmlFor="name" className="form-label">
@@ -231,9 +220,21 @@ e.preventDefault();
               <input
                 onChange={(e) => setPhoto(e.target.files[0])}
                 type="file"
-                className="form-control  shadow-sm"
+                className="form-control shadow-sm"
                 id="image"
               />
+            </div>
+            <div className="mb-1">
+              <label htmlFor="description" className="form-label">
+                Description
+              </label>
+              <textarea
+                className="form-control  shadow-sm"
+                id="description"
+                rows="3"
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}
+              ></textarea>
             </div>
 
             <button type="submit" className="btn btn-add text-light my-3 ">

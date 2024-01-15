@@ -17,7 +17,7 @@ export default function page() {
             type="button"
             className="btn btl btn-lg w-100 position-relative mt-2"
           >
-          <h3 className="animate__animated animate__heartBeat  ">
+          <h3 className="animate__animated animate__heartBeat text-light  ">
             Welcome Back
           </h3>
            Add course
@@ -26,7 +26,7 @@ export default function page() {
         </div>
 
         <ul
-          className="nav nav-pills mt-3 mb-3 justify-content-start justify-content-lg-end align-items-start animate__animated animate__fadeInDown "
+          className="nav nav-pills mt-3  mb-3 justify-content-start justify-content-lg-end align-items-start animate__animated animate__fadeInDown "
           role="tablist"
         >
           <li className="nav-item mx-1">

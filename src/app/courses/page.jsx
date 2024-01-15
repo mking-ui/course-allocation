@@ -7,26 +7,25 @@ export default function page() {
   return (
     <>
       <NavB />
-      <div className="container" id="coursespage">
-        <div className="display-6 mb-2 text-justify">
-          <Link className="btn border-0  back  shadow btn-sm mx-1" href="/">
-            <i className="bi bi-arrow-left mx-1"> </i>
-          </Link>
-          <button type="button" class="btn btl btn-lg w-100 position-relative mt-2">
-            Courses Description <br />
-            <div className="shadow-none mb-1 py-2">
-          <Link href={'/searchCrs1'}>
-          <input
-            type="text"
-            className="shadow border-0 p-2 rounded-2  position-relative col-12 col-md-4"
-            placeholder="Search for your course"
-          />
-          </Link>
-        </div>
-          </button>
-        </div>
+     
 
-       
+      <div className="container" id="coursespage">
+      
+        <button
+          type="button"
+          class="btn btl btn-lg w-100 position-relative mt-2"
+        >
+          Courses Description <br />
+          <div className="shadow-none mb-1 py-2">
+            <Link href={"/searchCrs1"}>
+              <input
+                type="text"
+                className="shadow border-0 p-2 rounded-2  position-relative col-12 col-md-4"
+                placeholder="Search for your course"
+              />
+            </Link>
+          </div>
+        </button>
 
         <ul
           className="nav nav-pills mt-2 justify-content-start justify-content-lg-end align-items-start animate__animated animate__fadeInDown "
@@ -56,11 +55,13 @@ export default function page() {
 
         <div className="tab-content">
           <div className="container p-0 tab-pane active" id="100">
-            <div className="col-12"><FirstSemester100 /></div>
+            <div className="col-12">
+              <FirstSemester100 />
+            </div>
           </div>
 
           <div className="container tab-pane fade" id="200">
-         <FirstSemester200 />
+            <FirstSemester200 />
           </div>
 
           <div className="container tab-pane fade" id="300">

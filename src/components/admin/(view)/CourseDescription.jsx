@@ -45,7 +45,7 @@ export default async function CourseDescription() {
                 <p className="text-cate pl1 pt-3">{first.description}</p>
                 <div className="d-flex flex-row gap-2 ">
                   <Link
-                    href={`/details/${first._id}`}
+                    href={`/details1/${first._id}`}
                     className="btn btn-readmore shadow "
                   >
                     <i className="bi bi-chevron-right">Read More</i>
