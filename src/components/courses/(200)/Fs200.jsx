@@ -3,7 +3,7 @@ import getAllCourses from "@/course-fetch/level2/getAllCourse";
 import Link from "next/link";
 
 export default async function FirstSemester200() {
- const level2s = await getAllCourses();
+ //const level2s = await getAllCourses();
   return (
     <>
       <div className="container" id="courses">

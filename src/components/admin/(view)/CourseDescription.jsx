@@ -2,7 +2,7 @@ import RemoveButton from "@/components/courses/(100)/Delete1";
 import getAllCourses from "@/course-fetch/level1/getAllCourse";
 import Link from "next/link";
 export default async function CourseDescription() {
-  const level1s = await getAllCourses();
+  //const level1s = await getAllCourses();
   return (
     <>
       <div className="container " id="courses">
