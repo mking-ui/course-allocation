@@ -1,11 +1,11 @@
 
-import semester from "@/models/semester";
+import Semester from "@/models/Semester";
 import { NextResponse } from "next/server";
 
 export async function GET (req, {params:{id}}){
     try {
      
-      const level1 = await semester.findOne({_id:id})
+      const level1 = await Semester.findOne({_id:id})
       return NextResponse.json(level1)
 
     } catch (error) {
@@ -39,7 +39,7 @@ export async function PUT(request, { params: { id } }) {
       image,
     };
     //Use the Model to update
-    await semester.findByIdAndUpdate(id, newUser);
+    await Semester.findByIdAndUpdate(id, newUser);
     return NextResponse.json(
       {
         message: "User Updated successfully",

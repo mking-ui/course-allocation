@@ -1,5 +1,5 @@
 
-import semester from "@/models/semester";
+import Semester from "@/models/Semester";
 import { NextResponse } from "next/server";
 
 //post
@@ -8,7 +8,7 @@ export async function POST(req) {
         
     
         const body = await req.json();
-        const newlevel1 = await semester.create(body)
+        const newlevel1 = await Semester.create(body)
         return NextResponse.json({ msg: ["successfully created"], newlevel1 }, { status: 200 });
 
     } catch (error) {
@@ -21,7 +21,7 @@ export async function POST(req) {
 export async function GET(req) {
     try {
         
-        const level1s = await semester.find();
+        const level1s = await Semester.find();
         return NextResponse.json(level1s);
 
     } catch (error) {
@@ -35,7 +35,7 @@ export async function DELETE(req) {
     try {
         const id = req.nextUrl.searchParams.get("id")
      
-        await semester.findByIdAndDelete(id)
+        await Semester.findByIdAndDelete(id)
         return NextResponse.json("succesfully deleted")
     } catch (error) {
         return NextResponse.json("unable to delete")

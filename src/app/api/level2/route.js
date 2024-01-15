@@ -1,5 +1,5 @@
 
-import { Semester2 } from "@/models/semester";
+import { Semester2 } from "@/models/Semester";
 import { NextResponse } from "next/server";
 
 //post
