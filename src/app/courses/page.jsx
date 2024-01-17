@@ -56,12 +56,12 @@ export default function page() {
         <div className="tab-content">
           <div className="container p-0 tab-pane active" id="100">
             <div className="col-12">
-              <FirstSemester100 />
+             {/** <FirstSemester100 /> */}
             </div>
           </div>
 
           <div className="container tab-pane fade" id="200">
-            <FirstSemester200 />
+            {/**<FirstSemester200 /> */}
           </div>
 
           <div className="container tab-pane fade" id="300">

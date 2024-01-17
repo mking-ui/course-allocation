@@ -4,7 +4,7 @@ export default function InstructorPage() {
   return (
     <>
       <NavB />
-<Instructor/> 
+{/**<Instructor/>  */}
     </>
   );
 }
