@@ -2,7 +2,7 @@ import RemoveButton from "@/components/courses/(100)/Delete1";
 import getAllCourses from "@/course-fetch/level1/getAllCourse";
 import Link from "next/link";
 export default async function CourseDescription() {
-  //const level1s = await getAllCourses();
+  const level1s = await getAllCourses();
   return (
     <>
       <div className="container " id="courses">
@@ -38,7 +38,7 @@ export default async function CourseDescription() {
               </div>
 
               <div
-                className="col-lg-7 pt-1 con order-2 order-lg-1 pt-2 title-description"
+                className="col-lg-7 pt-1 shadow order-2 order-lg-1 pt-2 title-description"
                 data-aos="fade-up"
               >
                 <h2>{first.title}</h2> <hr className="text-light mb-1" />
