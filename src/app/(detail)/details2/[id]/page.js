@@ -2,7 +2,7 @@
 import getSingleCourse from "@/course-fetch/level2/getSingleCourse";
 import Link from "next/link";
 export default async function ViewCourses({ params: { id } }) {
-  //const second = await getSingleCourse(id);
+  const second = await getSingleCourse(id);
   console.log(second);
   return (
     <>
