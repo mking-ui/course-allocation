@@ -125,7 +125,7 @@ e.preventDefault();
           {error && <p className=" text-center text-danger">{error}</p>}
                   <hr className="mb-1" />
             <div className="col-md-6 ">
-              <label htmlFor="code" className="form-label">
+              <label htmlFor="code" className="form-label text-light">
                 Course Code
               </label>
 
@@ -138,7 +138,7 @@ e.preventDefault();
               />
             </div>
             <div className="col-md-6">
-              <label htmlFor="title" className="form-label">
+              <label htmlFor="title" className="form-label text-light">
                 Course Title & (Credit Unit)
               </label>
               <input
@@ -153,7 +153,7 @@ e.preventDefault();
            
 
             <div className="col-md-4">
-              <label htmlFor="name" className="form-label">
+              <label htmlFor="name" className="form-label text-light">
                 Instructor Name
               </label>
               <input
@@ -165,7 +165,7 @@ e.preventDefault();
               />
             </div>
             <div className="col-md-4">
-              <label htmlFor="position" className="form-label">
+              <label htmlFor="position" className="form-label text-light">
                Position
               </label>
               <input
@@ -177,7 +177,7 @@ e.preventDefault();
               />
             </div>
             <div className="col-md-4">
-              <label htmlFor="specializes" className="form-label">
+              <label htmlFor="specializes" className="form-label text-light">
               Specializes
               </label>
               <input
@@ -189,7 +189,7 @@ e.preventDefault();
               />
             </div>
             <div className="col-md-4">
-              <label htmlFor="Email" className="form-label">
+              <label htmlFor="Email" className="form-label text-light">
                 Email Address:
               </label>
               <input
@@ -201,7 +201,7 @@ e.preventDefault();
               />
             </div>
             <div className="col-md-4">
-              <label htmlFor="phone" className="form-label">
+              <label htmlFor="phone" className="form-label text-light">
                Phone No:
               </label>
               <input
@@ -214,7 +214,7 @@ e.preventDefault();
             </div>
             
             <div className="col-md-4">
-              <label htmlFor="image" className="form-label">
+              <label htmlFor="image" className="form-label text-light">
                 Upload Image
               </label>
               <input
@@ -225,7 +225,7 @@ e.preventDefault();
               />
             </div>
             <div className="mb-1">
-              <label htmlFor="description" className="form-label">
+              <label htmlFor="description" className="form-label text-light">
                 Description
               </label>
               <textarea
