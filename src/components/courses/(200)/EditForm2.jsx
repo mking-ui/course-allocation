@@ -52,7 +52,7 @@ export default function EditForm2({
       }),
     });
     if (response.status == 200) {
-      router.push("/dashboard");
+      router.push("/viewcourse2");
       router.refresh();
     }
     //console.log(newUser);

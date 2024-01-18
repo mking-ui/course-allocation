@@ -21,7 +21,7 @@ export default function NavB() {
             <span className="bi bi-list h3"></span>
           </button>
           <div
-            className=" sidebar offcanvas offcanvas-start offset-1 mt-3 mb-3  "
+            className=" sidebar offcanvas offcanvas-start mt-3 mb-3  "
             tabindex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
