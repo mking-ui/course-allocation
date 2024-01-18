@@ -38,7 +38,8 @@ export default function Project() {
       </div>
       <div className="container">
         <div className="row mt-5  gap-lg-0">
-          <div className="col-lg-4 col-6  my-lg-2 " id="topic">
+        <h1 className=" mt-2 ms-1">List of some final year project</h1>
+          <div className="col-lg-4 col-12  my-lg-2 " id="topic">
             <h1>Lorem ipsum </h1>
             <small>Software/Technology</small>
             <div className="d-flex flex-row">
@@ -53,7 +54,7 @@ export default function Project() {
               </details>
             </div>
           </div>
-          <div className="col-lg-4 col-6  my-lg-2 " id="topic">
+          <div className="col-lg-4 col-12  my-lg-2 " id="topic">
             <h1>Lorem ipsum </h1>
             <small>Software/Technology</small>
             <div className="d-flex flex-row">
@@ -68,7 +69,7 @@ export default function Project() {
               </details>
             </div>
           </div>
-          <div className="col-lg-4 col-6  my-lg-2 " id="topic">
+          <div className="col-lg-4 col-12  my-lg-2 " id="topic">
             <h1>Lorem ipsum </h1>
             <small>Software/Technology</small>
             <div className="d-flex flex-row">
@@ -83,7 +84,7 @@ export default function Project() {
               </details>
             </div>
           </div>
-          <div className="col-lg-4 col-6  my-lg-2 " id="topic">
+          <div className="col-lg-4 col-12  my-lg-2 " id="topic">
             <h1>Lorem ipsum </h1>
             <small>Software/Technology</small>
             <div className="d-flex flex-row">
@@ -98,7 +99,7 @@ export default function Project() {
               </details>
             </div>
           </div>
-          <div className="col-lg-4 col-6  my-lg-2 " id="topic">
+          <div className="col-lg-4 col-12  my-lg-2 " id="topic">
             <h1>Lorem ipsum </h1>
             <small>Software/Technology</small>
             <div className="d-flex flex-row">
@@ -113,7 +114,7 @@ export default function Project() {
               </details>
             </div>
           </div>
-          <div className="col-lg-4 col-6 my-lg-2 " id="topic">
+          <div className="col-lg-4 col-12 my-lg-2 " id="topic">
             <h1>Lorem ipsum </h1>
             <small>Software/Technology</small>
             <div className="d-flex flex-row">
@@ -122,7 +123,7 @@ export default function Project() {
             </div>
 
             <div>
-              <details>
+              <details >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
                 ullam.
               </details>
